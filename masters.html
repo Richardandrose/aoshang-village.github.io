@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传承人介绍 - 郴州市坳上古村参观系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">坳上古村</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="village.html">村落介绍</a></li>
+                <li><a href="heritage.html">非遗文化</a></li>
+                <li><a href="masters.html" class="active">传承人</a></li>
+                <li><a href="video.html">宣传视频</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="切换导航菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 页头横幅 -->
+    <div class="page-banner" style="--banner-bg: #4a4035;">
+        <div>
+            <h1>薪火相传 创新发展</h1>
+            <p>守护传统 展望未来</p>
+        </div>
+        <div class="banner-curve"></div>
+    </div>
+
+    <!-- 传承人内容 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">非遗传承人</h2>
+            <p class="section-subtitle">守护传统技艺的匠心传人</p>
+
+            <div class="master-grid">
+                <div class="master-card fade-in-scale">
+                    <img src="images/master1.jpg" alt="马方棋">
+                    <div class="master-info">
+                        <h3>马方棋</h3>
+                        <span class="master-tag">非遗传承人</span>
+                        <p>郴州市苏仙人，中国硬笔书法协会会员，高级书法教师，湖南省青年书法家协会会员，郴州市苏仙区老干部书画协会主席，苏仙区文史研究员，苏仙区文联委员。多年来致力于书法教学，书雕、烙画等非物质文化传承，培训学员千余人，多次在全国省市赛事中获奖。</p>
+                        <div class="master-awards">
+                            <span class="award-tag">苏仙区文史研究员</span>
+                            <span class="award-tag">苏仙区文联委员</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="master-card fade-in-scale">
+                    <img src="images/master2.jpg" alt="李红梅">
+                    <div class="master-info">
+                        <h3>李红梅</h3>
+                        <span class="master-tag">非遗传承人</span>
+                        <p>44岁，北湖区梨树山人，毕业于长沙师范学院。郴州剪绣（融合剪纸与刺绣）非遗代表传承人、苏仙区第三代剪绣非遗传承人。担任开放大学及中小学非遗教师，在坳上古村设有沉浸式女红非遗体验馆。事迹被央视《远方的家》、湖南台、郴州日报等媒体报道。</p>
+                        <div class="master-awards">
+                            <span class="award-tag">郴州绣剪非遗代表传承人</span>
+                            <span class="award-tag">北湖区三八红旗手</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-block">
+                    <h4>联系我们</h4>
+                    <p>地址：湖南省郴州市苏仙区坳上古村</p>
+                    <p>电话：</p>
+                    <p>村长电话：</p>
+                    <p>邮箱：aoshang@chenzhou.gov.cn</p>
+                </div>
+                <div class="footer-block">
+                    <h4>关注我们</h4>
+                    <p>获取坳上古村最新动态与活动信息</p>
+                    <div class="social-links">
+                        <a href="#">微信公众号</a>
+                        <a href="#">新浪微博</a>
+                        <a href="#">抖音号</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 郴州市坳上古村非遗文化 版权所有 | 湘ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        // 滚动动画
+        function initScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+            document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        initScrollAnimation();
+    </script>
+</body>
+</html>
