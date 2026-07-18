@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>村落介绍 - 郴州市坳上古村参观系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">坳上古村</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="village.html" class="active">村落介绍</a></li>
+                <li><a href="heritage.html">非遗文化</a></li>
+                <li><a href="masters.html">传承人</a></li>
+                <li><a href="video.html">宣传视频</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="切换导航菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 页头横幅 -->
+    <div class="page-banner" style="--banner-bg: #6b5b4f;">
+        <div>
+            <h1>千年古村 文化传承</h1>
+            <p>追溯坳上古村的历史长河</p>
+        </div>
+        <div class="banner-curve"></div>
+    </div>
+
+    <!-- 村落介绍内容 -->
+    <section class="section">
+        <div class="container">
+            <div class="intro-card fade-in">
+                <h2>坳上古村 · 湘南传统村落</h2>
+                <div class="divider">村落概况 · 历史底蕴</div>
+                <p>坳上古村位于湖南省郴州市苏仙区，始建于明朝洪武年间，距今已有600余年历史。村落因地处山坳之上而得名，整体布局遵循"背山面水"的传统风水理念，依山而建，层层叠叠，错落有致。</p>
+            </div>
+
+            <div class="image-grid">
+                <div class="image-card fade-in-scale">
+                    <img src="images/village1.jpg" alt="古民居">
+                    <h3>古民居群</h3>
+                    <p>保存完好的明清古建筑</p>
+                </div>
+                <div class="image-card fade-in-scale">
+                    <img src="images/village2.jpg" alt="村落巷道">
+                    <h3>青石板巷</h3>
+                    <p>蜿蜒曲折的古老巷道</p>
+                </div>
+                <div class="image-card fade-in-scale">
+                    <img src="images/village3.jpg" alt="四季花海">
+                    <h3>四季花海</h3>
+                    <p>400亩花海竞相绽放</p>
+                </div>
+            </div>
+
+            <div class="feature-row" style="margin-top: 60px;">
+                <div class="feature-text fade-in-left">
+                    <h3>独特的村落格局</h3>
+                    <p>坳上古村选址考究，背山面水，符合传统风水理念。村落整体布局呈扇形展开，以祠堂为中心，民居沿山势层层递进，形成了独特的空间层次感。</p>
+                    <p>村内古民居多为砖木结构，马头墙、小青瓦、雕花门窗，处处彰显着湘南建筑的精巧工艺。每一栋建筑都承载着家族的历史记忆，是研究湘南民俗文化的活化石。</p>
+                </div>
+                <div class="feature-image fade-in-right">
+                    <img src="images/village4.jpg" alt="村落全景">
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-image fade-in-right">
+                    <img src="images/village5.jpg" alt="古建筑细节">
+                </div>
+                <div class="feature-text fade-in-left">
+                    <h3>精湛的建筑工艺</h3>
+                    <p>古村的建筑工艺堪称一绝。青砖黛瓦间，精美的木雕、石雕、砖雕随处可见。门楼上的浮雕、窗棂上的镂空花纹、梁柱上的彩绘，无不展现着古代工匠的高超技艺。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-block">
+                    <h4>联系我们</h4>
+                    <p>地址：湖南省郴州市苏仙区坳上古村</p>
+                    <p>电话：0735-2885059</p>
+                    <p>村书记电话：15773585218</p>
+                </div>
+                <div class="footer-block">
+
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 郴州市坳上古村非遗文化 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        // 滚动动画
+        function initScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+            document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        initScrollAnimation();
+    </script>
+
+    <script>
+        // 汉堡菜单
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const toggle = document.querySelector('.nav-toggle');
+            navLinks.classList.toggle('mobile-active');
+            toggle.classList.toggle('active');
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('mobile-active');
+                document.querySelector('.nav-toggle').classList.remove('active');
+            });
+        });
+
+        // 滚动动画
+        function initScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+            document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        initScrollAnimation();
+    </script>
+</body>
+</html>
